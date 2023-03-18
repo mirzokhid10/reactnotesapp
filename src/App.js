@@ -50,11 +50,14 @@ function App() {
     if(savedNotes) {
       setNotes(savedNotes)
     }
-  },[notes])
+  },[])
 
   useEffect(()=>{
-    localStorage.setItem("react-notes-app-data", JSON.stringify(notes))
-  },[notes])
+    localStorage.setItem(
+      "react-notes-app-data", 
+      JSON.stringify(notes)
+    )
+  }, [notes])
 
   return (
     <div className="container max-w-[960px] mx-auto px-4 py-6">
